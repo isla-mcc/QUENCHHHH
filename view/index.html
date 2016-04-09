@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <br><br>
+        <a href="#/homepage">View Homepage</a>
+        <a id='menu' href="#/register">Register</a>
+        
+        <section class='loginsection'>
+            <br><br>
+            <img id='logo' src='img/pusheenlogo2.gif'/>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="username"/><br/>
+            <input type="password" id="password" placeholder="password"/><br/>
+            <button type="submit" id='submit'>Login</button><br/><br/><br/>
+        </section>
+        
+        <br><br>
+        
+    </body>
+    
+    <script>
+      $(document).ready(function(){
+            var user_id = "";
+          
+            document.getElementById('submit').onclick = function(){
+            $.ajax({
+               url:"controller/login.php",
+                type:"POST",
+                dataType:"json",
+                data: {
+                    method: "login",
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value
+                },
+                success:function(resp){
+                    window.location.replace("#/homepage");
+                    
+                    
+                    var div = document.getElementById('content');
+                   
+                    
+                    user_id = resp[0].id;
+                    sessionStorage.myid = resp[0].id;
+                    console.log(user_id);
+
+                },
+                error: function (resp){
+                    console.log(resp);
+                    alert("error");
+                }
+            });
+            
+            }
+            
+            
+            
+        });
+
+        
+    </script>    
+
+</html>

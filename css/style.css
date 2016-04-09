@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body {
+background-image: url("../img/pusheen.jpg");
+text-align: center;
+align-content: center;
+font-family: Calibri;
+}
+
+a {
+text-decoration: none;
+color: black; 
+font-size: 16px; 
+padding: 16px; 
+font-family:Calibri;
+}
+
+h1 {
+font-family: cursive;
+margin-top: auto;
+color: red;
+}
+
+h2 {
+font-size: 22px;
+}
+
+h5 {
+margin-top: -20px;
+}
+
+#logout {
+text-decoration: none;
+color: black; 
+font-size: 19px; 
+padding: 20px; 
+}
+
+a:hover {
+color: red;
+}
+
+#logout:hover {
+color: blue;
+}
+
+#content {
+width:50vw;
+align-self: center;
+margin: auto;
+border: solid 1px #555;
+border-radius: 10px;
+background-color: #ced;
+box-shadow: 0 0 10px rgba(0,0,0,0.6);
+-moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+-o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+
+input {
+padding: 12px;
+margin-bottom: 15px;
+border: solid #e55ea2;
+border-width: thin;
+width: 250px;
+border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+   color: #e55ea2;
+}
+
+button {
+width: 100px;
+height: 30px;
+color: white;
+background-color: #e55ea2;
+border: solid #ddd;
+border-width: thin;
+}
+
+#editBio {
+height:100px;
+}
+
+h1 {
+font-family: cursive;
+font-size: 50px;
+margin-top: auto;
+color: maroon;
+}
+
+#logo {
+width: 150px;
+height: auto;
+}
+
+#viewProfile {
+background-color: white;
+width: 35vw;
+margin: auto;
+margin-bottom: 10px;
+border: solid black;
+border-width: thin;
+z-index: 2;
+position: "relative";
+}
+
+#menu{
+font-size: 17px;
+}
+
+
+#nav {
+z-index: 1;
+position:"relative";
+
+
+}
+
+
+

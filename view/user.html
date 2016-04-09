@@ -1,0 +1,94 @@
+<div id='editInfo'>
+    
+    <br>
+    <h1>Edit Profile</h1>
+    <input type="text" id="editUsername" placeholder='username'/>
+    <br>     
+    <input type="password" id="editPass" placeholder='password'/>
+    <br>      
+    <input type="text" id="editBio" placeholder='Add a Bio!'/>
+    <br>
+    <button type="submit" id="edit">Confirm Your Changes</button>
+    <br><br>
+    <a href="#/profile"><--Go Back--<</a> 
+    <br><br>
+</div>    
+        
+<script>
+    
+    $(document).ready(function(){
+        
+        var id = sessionStorage.myid;
+        
+        var div = document.getElementById("editInfo"); 
+        var username = document.getElementById("editUsername");
+        var bio = document.getElementById("editBio");
+        var password = document.getElementById("editPass");
+        var editbutton = document.getElementById("edit");
+        
+        
+           $.ajax({
+                url:"controller/editprofile.php",
+                type:"POST",
+                dataType:"json",
+                data: {
+                    method:"getprofile",
+                    user_id: sessionStorage.myid,
+                    id:id
+                },
+                success:function(resp){
+                console.log(resp);
+                    
+                    for(var i = 0; i<resp.length; i++){
+                        if (resp[i].id != sessionStorage.myid)
+                            continue;
+                        
+                    var id = resp[i].id;
+    
+                    var div = document.getElementById("editInfo"); 
+                    var username = document.getElementById("editUsername");
+                    var bio = document.getElementById("editBio");
+                    var password = document.getElementById("editPass");
+                    var editbutton = document.getElementById("edit");
+                    
+                    username.id ="editUsername";
+                    username.value = resp[i].username;
+                    
+                    bio.id ="editBio";
+                    bio.value = resp[i].bio;
+                    
+                    password.id ="editPass";
+                    password.value = resp[i].password; 
+                    
+        
+                    edit.onclick = function(){
+                       var id = sessionStorage.myid;
+                         console.log(id); 
+                           $.ajax({
+                               url:"controller/editprofile.php",
+                                type: "POST",
+                                dataType: "json",
+                                        data: {
+                                            method: "editprofile",
+                                            username:document.getElementById("editUsername").value,
+                                            bio:document.getElementById("editBio").value,
+                                            password:document.getElementById("editPass").value,
+                                            id:id
+
+                                        },
+                                        success:function(resp4){
+                                            alert("Your Info has been updated!");
+                                            window.location.replace("#/profile");
+
+                                        },
+                                        error:function(error){
+                                            console.log(error);
+                                        }
+                                    });
+                         }
+                    }
+                }
+           });
+    });
+        
+    </script> 
