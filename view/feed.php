@@ -54,7 +54,7 @@ $(document).ready(function(){
                             
                             var commentTitle = document.createElement("input");
                             commentTitle.id = "cmText"+resp[i].id;
-                            commentTitle.placeholder = "Say something nice about " + resp[i].title +"!";
+                            commentTitle.placeholder = "Express interest in " + resp[i].title +"!";
                             commentTitle.style.marginTop = "10px";
                             commentTitle.style.width = "210px";
                             commentTitle.style.height = "2px";

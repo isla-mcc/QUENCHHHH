@@ -7,12 +7,12 @@
 
     <body>
             <br><br>
-            <h1>Add a Cat!</h1>
+            <h1>Add a Post!</h1>
             
-            <input type="text" id="title" placeholder="Cat's Name"/><br>
+            <input type="text" id="title" placeholder="Name of Product"/><br>
             <input type="text" id="path" placeholder="Image URL"/><br>
-            <input type="text" id="description" placeholder="Describe this cat"/><br>
-            <button type="submit" id="additem">Add Your Cat!</button><br><br>
+            <input type="text" id="description" placeholder="Describe this product"/><br>
+            <button type="submit" id="additem">Add a Post!</button><br><br>
             <a href="#/profile"><--Go Back--<</a>
             <br><br><br>
      </body>
