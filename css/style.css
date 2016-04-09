@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 body {
-background-image: url("../img/pusheen.jpg");
 text-align: center;
 align-content: center;
 font-family: Calibri;
+background-image: url('../img/background.jpg');
 }
 
 a {
@@ -50,7 +50,7 @@ align-self: center;
 margin: auto;
 border: solid 1px #555;
 border-radius: 10px;
-background-color: #ced;
+background-color: white;
 box-shadow: 0 0 10px rgba(0,0,0,0.6);
 -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
 -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
@@ -61,21 +61,21 @@ box-shadow: 0 0 10px rgba(0,0,0,0.6);
 input {
 padding: 12px;
 margin-bottom: 15px;
-border: solid #e55ea2;
+border: solid black;
 border-width: thin;
 width: 250px;
 border-radius: 5px;
 }
 
 ::-webkit-input-placeholder {
-   color: #e55ea2;
+   color: black;
 }
 
 button {
 width: 100px;
 height: 30px;
 color: white;
-background-color: #e55ea2;
+background-color: black;
 border: solid #ddd;
 border-width: thin;
 }

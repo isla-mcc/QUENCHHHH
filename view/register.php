@@ -14,7 +14,7 @@
         
         <section class='loginsection'>
             <br><br>
-            <img id='logo' src='img/pusheenlogo2.gif'/>
+            <img id='logo' src='img/quenchlogo.png'/>
             <h2>Register</h2>
             <input type="text" id="username_r" placeholder="Username" /><br/>
             <input type="password" id="password_r" placeholder="Password"/><br/>

@@ -5,7 +5,7 @@
     <a id='menu' href="#/profile">View Your Profile</a>
     <a id='menu' href="#/login">Logout</a>
     </div>
-    <img id='logo' src='img/pusheenlogo2.gif'/>
+    <img id='logo' src='img/quenchlogo.png'/>
 
     
     <div id='allposts'>
@@ -43,14 +43,14 @@ $(document).ready(function(){
                             desc.innerHTML = resp[i].description;
                             desc.style.fontFamily = "Helvetica";
                             desc.style.fontWeight = "200";
-                            desc.style.color = "maroon";
+                            desc.style.color = "white";
                             desc.style.fontSize = "15px";
                             
                             var title = document.createElement("h2")
                             title.innerHTML = img.title;
                             title.style.fontFamily = "Helvetica";
                             title.style.fontWeight = "100";
-                            title.style.color = "maroon";
+                            title.style.color = "white";
                             
                             var commentTitle = document.createElement("input");
                             commentTitle.id = "cmText"+resp[i].id;
@@ -77,7 +77,7 @@ $(document).ready(function(){
                             var imgDiv = document.createElement("div");
                             masterDiv.appendChild(imgDiv);
                             imgDiv.class = 'div';
-                            imgDiv.style.backgroundColor = "white";
+                            imgDiv.style.backgroundColor = "rgb(226,108,100)";
                             imgDiv.style.borderRadius = "7px";
                             
                                                         
