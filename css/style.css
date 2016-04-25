@@ -1,70 +1,73 @@
 @charset "UTF-8";
 
 body {
-text-align: center;
-align-content: center;
-font-family: Calibri;
-background-image: url('../img/background.jpg');
+    text-align: center;
+    align-content: center;
+    font-family: Calibri;
+    background-image: url('../img/background.jpg');
 }
 
 a {
-text-decoration: none;
-color: black; 
-font-size: 16px; 
-padding: 16px; 
-font-family:Calibri;
+    text-decoration: none;
+    font-size: 16px; 
+    padding:7px;
+    font-family:Calibri;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border: solid #ddd;
+    border-width: thin;
+    
 }
 
 h1 {
-font-family: cursive;
-margin-top: auto;
-color: red;
+    margin-top: auto;
 }
 
 h2 {
-font-size: 22px;
+    font-size: 22px;
 }
 
 h5 {
-margin-top: -20px;
+    margin-top: -20px;
 }
 
 #logout {
-text-decoration: none;
-color: black; 
-font-size: 19px; 
-padding: 20px; 
+    text-decoration: none;
+    color: black; 
+    font-size: 19px; 
+    padding: 20px; 
 }
 
 a:hover {
-color: red;
+    color: red;
+    cursor:pointer;
 }
 
 #logout:hover {
-color: blue;
+    color: blue;
 }
 
 #content {
-width:50vw;
-align-self: center;
-margin: auto;
-border: solid 1px #555;
-border-radius: 10px;
-background-color: white;
-box-shadow: 0 0 10px rgba(0,0,0,0.6);
--moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
--webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
--o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    width:50vw;
+    align-self: center;
+    margin: auto;
+    border: solid 1px #555;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
 
 input {
-padding: 12px;
-margin-bottom: 15px;
-border: solid black;
-border-width: thin;
-width: 250px;
-border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: solid black;
+    border-width: thin;
+    width: 250px;
 }
 
 ::-webkit-input-placeholder {
@@ -72,52 +75,62 @@ border-radius: 5px;
 }
 
 button {
-width: 100px;
-height: 30px;
-color: white;
-background-color: black;
-border: solid #ddd;
-border-width: thin;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border: solid #ddd;
+    border-width: thin;
+}
+
+button:hover {
+    color: #78e278;
+    cursor:pointer;
 }
 
 #editBio {
-height:100px;
+    height:100px;
 }
 
 h1 {
-font-family: cursive;
-font-size: 50px;
-margin-top: auto;
-color: maroon;
+    font-family: Helvetica;
+    font-size: 40px;
+    margin-top: auto;
+    color: #78e278;
 }
 
 #logo {
-width: 150px;
-height: auto;
+    width: 200px;
+    height: auto;
 }
 
 #viewProfile {
-background-color: white;
-width: 35vw;
-margin: auto;
-margin-bottom: 10px;
-border: solid black;
-border-width: thin;
-z-index: 2;
-position: "relative";
+    background-color: white;
+    margin: auto;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: "relative";
+    margin-left:5%;
 }
 
 #menu{
-font-size: 17px;
+    font-size: 17px;
+    background-color: black;
+    color:white;
+    padding-bottom:7px;
+    padding-top:7px;
+    margin-left:-20px;
+    margin-right:20px;
+    text-align:center;
 }
 
+#menu:hover {
+    color: #78e278;
+    cursor:pointer;  
+}
 
 #nav {
-z-index: 1;
-position:"relative";
-
-
+    z-index: 1;
+    position:"relative";
+    width:100%;
 }
-
-
-

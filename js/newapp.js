@@ -16,6 +16,11 @@ MessageApp.config([
                 templateUrl:"view/user.html",
             }
         ).when(
+            "/otheruserprofile",
+            {
+                templateUrl:"view/otheruserprofile.php",
+            }
+        ).when(
             "/login",
             {
                 templateUrl:"view/index.html"

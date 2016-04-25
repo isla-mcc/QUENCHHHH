@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
 <br><br>
-        <div id='viewProfile'>
+    <div id='viewProfile'>
+    <div class='thenav'>
     <a id='menu' href="#/profile">View Your Profile</a>
     <a id='menu' href="#/login">Logout</a>
+    </div>        
     </div>
     <img id='logo' src='img/quenchlogo.png'/>
+    </br>
+    </br>
 
-    
     <div id='allposts'>
     </div>
+    
+    <div id="display"></div>
+    <div id='commentdisplay'></div>
+    
+    <div id="profileInfo"></div>
+    <div id='userPost'></div>   
+        
 </html>
 
 <script>
 
 $(document).ready(function(){
-    
-
                             
     var id = sessionStorage.myid;
     
@@ -52,6 +60,49 @@ $(document).ready(function(){
                             title.style.fontWeight = "100";
                             title.style.color = "white";
                             
+                            var thename = document.createElement("p")
+                            thename.innerHTML = resp[i].username;
+                            thename.style.fontFamily = "Helvetica";
+                            thename.style.fontWeight = "100";
+                            thename.style.color = "black"; 
+                            
+                            $.ajax({
+                                url:"controller/editprofile.php",
+                                type:"POST",
+                                dataType:"json",
+                                data: {
+                                    method:"getprofile",
+                                    user_id: sessionStorage.myid,
+                                    id:id
+                                },
+                                success:function(resp){
+                                console.log(resp);
+
+                                    for(var i = 0; i<resp.length; i++){
+                                        if (resp[i].id != sessionStorage.myid)
+                                            continue;
+
+                                        var welcomeDiv = document.createElement("div");
+                                        var nameDiv = document.createElement("div");
+
+                                        var welcome = document.createElement("h3");
+                                        welcome.innerHTML = resp[i].username;
+
+                                        profileInfo.appendChild(welcomeDiv)
+                                        profileInfo.appendChild(nameDiv);
+                                        welcomeDiv.appendChild(welcome); 
+
+                                        profileInfo.style.margin = "auto";
+                                        profileInfo.style.backgroundColor = "#ffffff";
+                                        profileInfo.style.border = "solid 1px #d3d3d3";
+                                        profileInfo.style.marginBottom = "10px";
+
+
+                            }
+                        }
+
+                    });
+
                             var commentTitle = document.createElement("input");
                             commentTitle.id = "cmText"+resp[i].id;
                             commentTitle.placeholder = "Express interest in " + resp[i].title +"!";
@@ -59,9 +110,8 @@ $(document).ready(function(){
                             commentTitle.style.width = "210px";
                             commentTitle.style.height = "2px";
                             
-                            
                             var comment = document.createElement("button");
-                            comment.innerHTML = "Comment!";
+                            comment.innerHTML = "Message!";
                             comment.style.marginBottom = "10px";
                             comment.style.width = "90px";
                             comment.style.marginLeft = "5px";
@@ -69,7 +119,6 @@ $(document).ready(function(){
                             var div = document.createElement("div");
                             div.class = 'div';
                             div.style.backgroundColor = "white";
-                            div.style.borderRadius = "7px";
                             
                             var masterDiv = document.getElementById("allposts");
                             masterDiv.appendChild(div);
@@ -78,24 +127,27 @@ $(document).ready(function(){
                             masterDiv.appendChild(imgDiv);
                             imgDiv.class = 'div';
                             imgDiv.style.backgroundColor = "rgb(226,108,100)";
-                            imgDiv.style.borderRadius = "7px";
                             
+                            /*imgDiv.onclick = function(){
+                                sessionStorage.image_id = this.id;
+                                window.location.replace("#/otheruserprofile");   
+                            }*/
                                                         
                             imgDiv.onclick = function() {
                                         sessionStorage.image_id = this.id;
                                         window.location.replace("#/imageinfo");
                                 }
                             
-                            
                             var usrDiv = document.createElement("div");
                             usrDiv.style.marginTop = "";
                             
                             var commentDiv = document.createElement("div");
-                            commentDiv.style.borderRadius = "6px";
                             
-                            
+                            var br2 = document.createElement("br"); 
                             var br = document.createElement("br"); 
                             var name = document.createElement("p");
+                            
+                            
                             
                            /* $.ajax({
                                          url:"controller/images.php",
@@ -109,17 +161,48 @@ $(document).ready(function(){
                                                 for(var i = 0; i<resp.length; i++){
                                                     console.log(resp);
                                                     name.innerHTML = resp[i].username;
-                                                
                                                
                 }
                                                 
             }
-        }); */
+        }); 
+                            
+                            $.ajax({
+                                  url: "./controller/comment.php",
+                                  type: "post",
+                                  dataType: "json",
+                                  data: {
+                                  method: "getall",
+                                  image_id: sessionStorage.image_id
+                                  },
+                                success: function (resp) {
+                                    console.log(resp);
+                                    var html = "<ul id='list'>";
+                                    for (var i= 0; i < resp.length; i++) {
+                                      html += "<li id='listItem'>"+resp[i].username+": "+resp[i].title+"</li>";
+                                    }
+                                      html += "";
+                                      html += "</ul>";
+                                    $("#commentdisplay").html(html);
+
+                                      var list = document.getElementById("list");
+                                      var listItem = document.getElementById("listItem");
+
+                                      list.style.listStyleType = "none";
+
+                                  },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                              console.log(textStatus, errorThrown);
+                            }
+                                });
+                            
+                            */
                             masterDiv.style.margin = "auto";
                             
-                            
                             div.appendChild(imgDiv);
+                            imgDiv.appendChild(br2);
                             imgDiv.appendChild(title);
+                            imgDiv.appendChild(thename);
                             imgDiv.appendChild(img);
                             imgDiv.appendChild(desc);
                             imgDiv.appendChild(br);
@@ -141,6 +224,7 @@ $(document).ready(function(){
                             comment.id = resp[i].id;
                             div.id = resp[i].id;
                             imgDiv.id = resp[i].id;
+                            thename.id = resp[i].id;
                             
                                comment.onclick = function(){
                                
@@ -173,4 +257,5 @@ $(document).ready(function(){
                 }
             });
         });
+    
     

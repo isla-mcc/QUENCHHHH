@@ -10,7 +10,6 @@ if($_POST['method'] == "viewall"){
     view_all();
 }
 
-
 if($_POST['method'] == "insertcomment"){
     insert_comment();
 }

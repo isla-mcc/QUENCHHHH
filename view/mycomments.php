@@ -1,4 +1,5 @@
-<a href='#/homepage'>Back</a>
+
+
 <style>
     
 li {
@@ -14,13 +15,39 @@ width: 310px;
 height: auto;
 }
     
+#viewProfile {
+    margin-top:30px;
+    position:relative;
+}
+    
+    
+#menu {
+    font-size: 17px;
+    background-color: black;
+    color:white;
+    padding-bottom:-10px;
+    text-align:center;  
+}
+    
+.editcomment {
+        
+}
+    
+.deletecomment {
+        
+}
+    
 </style>
-<div id="display">
-
-
-<div id='commentdisplay'>
-
+<div id='viewProfile'>
+<a id='menu' href='#/homepage'>Back</a>
 </div>
+
+<div id="display">
+    
+<div id='commentdisplay'>
+</div>
+    
+    
 <script>
   $(document).ready(function () {
  

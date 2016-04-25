@@ -13,12 +13,10 @@ font-color: #ced;
 <body>
 <div id='viewProfile'>
 <br><br>
-<div class='thenav'> 
-    <a id='menu' href="#/homepage">Homepage</a>
-    <a id='menu' href="#/edit">Edit Profile</a>
-    <a id='menu' href="#/additem">Upload Image</a>
-    <a id='menu' href="#/mycomments">My Messages</a>
-</div>       
+<a id='menu' href="#/edit">Edit Profile</a>
+<a id='menu' href="#/additem">Upload Image</a>
+<a id='menu' href="#/homepage">Homepage</a>
+    <a id='menu' href="#/mycomments">My Comments</a>
     </div>
     
 <div id="profileInfo"></div>
@@ -102,10 +100,10 @@ $(document).ready(function(){
                             
                             var editImg = document.createElement("button");
                             var deleteImg = document.createElement("button");
-                            
+                    
                             editImg.innerHTML = "Edit";
                             deleteImg.innerHTML = "Delete";
-
+                            
                             editImg.style.width = "60px";
                             deleteImg.style.width = "60px";
                             
@@ -129,7 +127,7 @@ $(document).ready(function(){
                             onePost.style.borderBottom = "solid 1px grey";
                             onePost.style.marginBottom = "10px";
                             div.style.width = "350px";
-                                          
+                                                        
                             deleteImg.onclick = function(){
                                 
                                 var butt_id = this.id;
@@ -182,7 +180,6 @@ $(document).ready(function(){
                                 cancel.innerHTML = "Cancel";
                                 cancel.style.marginLeft = "5px";
                                     
-                                    
                                 onePost.appendChild(updateDiv);
                                 updateDiv.appendChild(edit);
                                     
@@ -191,7 +188,6 @@ $(document).ready(function(){
                                 edit.appendChild(updateBtn);
                                 edit.appendChild(cancel);
                                 
-                                    
                                 updateBtn.id = this.id;
                                 
                                 var title2 = newTitle.value;
@@ -205,7 +201,6 @@ $(document).ready(function(){
                                 
                                 
                                 updateBtn.onclick = function(){ 
-                                    
                       
                                     $.ajax({
                                         url: "controller/images.php",

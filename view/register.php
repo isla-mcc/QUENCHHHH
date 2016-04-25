@@ -7,11 +7,12 @@
     </head>
 
     <body>
+            <div id='viewProfile'>
                 <br><br>
-                <a href="#/homepage">View Homepage</a>
+                <a id='menu' href="#/homepage">View Homepage</a>
                 <a href="#/login">Login</a>
                 <br><br>
-        
+            </div>
         <section class='loginsection'>
             <br><br>
             <img id='logo' src='img/quenchlogo.png'/>
@@ -21,11 +22,6 @@
             <input type="password" id='c_password_r' placeholder='Confirm Your Password'/><br/>
             <button type="submit" id="sub">Register</button><br/><br/><br/> 
         </section>
-        
-
-        <!--<input type='text' id='title' placeholder='title' />
-        <input type='text' id='path' placeholder='path' /> 
-        <button id='submit'>Submit</button> -->
         
     </body>
 

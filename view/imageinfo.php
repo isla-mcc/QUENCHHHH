@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <br><br>
-<a href='#/homepage'><--Back--<</a>
+<a href='#/homepage'>Back</a>
 <div id="display">
 
 </div>

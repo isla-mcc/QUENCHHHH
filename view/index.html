@@ -7,7 +7,7 @@
 
     <body>
         <br><br>
-        <a href="#/homepage">View Homepage</a>
+        <a id='menu' href="#/homepage">View Homepage</a>
         <a id='menu' href="#/register">Register</a>
         
         <section class='loginsection'>
@@ -40,10 +40,8 @@
                 success:function(resp){
                     window.location.replace("#/homepage");
                     
-                    
                     var div = document.getElementById('content');
                    
-                    
                     user_id = resp[0].id;
                     sessionStorage.myid = resp[0].id;
                     console.log(user_id);
