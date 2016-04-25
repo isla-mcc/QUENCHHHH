@@ -97,7 +97,6 @@ $(document).ready(function(){
                                         profileInfo.style.border = "solid 1px #d3d3d3";
                                         profileInfo.style.marginBottom = "10px";
 
-
                             }
                         }
 

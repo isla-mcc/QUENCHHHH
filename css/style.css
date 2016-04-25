@@ -134,3 +134,11 @@ h1 {
     position:"relative";
     width:100%;
 }
+
+#heartgif {
+ width:10%;   
+}
+
+#heartgif:hover {
+ cursor:pointer;
+}

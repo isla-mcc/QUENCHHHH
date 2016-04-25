@@ -31,6 +31,7 @@
           html += "<img id='infoImg' src='" + resp[i].path + "' />"
           html += "<div>";
           html += "<p>"+resp[i].description+"</p>";
+          html += "<img id='heartgif' src='./img/heart.gif' />";      
           html += "</div>";
           html += "</div>";
         $("#display").html(html);
