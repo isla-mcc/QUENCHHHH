@@ -156,7 +156,7 @@ $(document).ready(function(){
                                 
                                 var new_info = this.id;
                                 var updateDiv = document.createElement("div");
-                                updateDiv.style.backgroundColor = "maroon";
+                                updateDiv.style.backgroundColor = "#ced";
                                 updateDiv.style.height = "auto";
                                 updateDiv.style.width = "349px";
                                 updateDiv.style.position = "relative";
