@@ -66,42 +66,6 @@ $(document).ready(function(){
                             thename.style.fontWeight = "100";
                             thename.style.color = "black"; 
                             
-                            $.ajax({
-                                url:"controller/editprofile.php",
-                                type:"POST",
-                                dataType:"json",
-                                data: {
-                                    method:"getprofile",
-                                    user_id: sessionStorage.myid,
-                                    id:id
-                                },
-                                success:function(resp){
-                                console.log(resp);
-
-                                    for(var i = 0; i<resp.length; i++){
-                                        if (resp[i].id != sessionStorage.myid)
-                                            continue;
-
-                                        var welcomeDiv = document.createElement("div");
-                                        var nameDiv = document.createElement("div");
-
-                                        var welcome = document.createElement("h3");
-                                        welcome.innerHTML = resp[i].username;
-
-                                        profileInfo.appendChild(welcomeDiv)
-                                        profileInfo.appendChild(nameDiv);
-                                        welcomeDiv.appendChild(welcome); 
-
-                                        profileInfo.style.margin = "auto";
-                                        profileInfo.style.backgroundColor = "#ffffff";
-                                        profileInfo.style.border = "solid 1px #d3d3d3";
-                                        profileInfo.style.marginBottom = "10px";
-
-                            }
-                        }
-
-                    });
-
                             var commentTitle = document.createElement("input");
                             commentTitle.id = "cmText"+resp[i].id;
                             commentTitle.placeholder = "Express interest in " + resp[i].title +"!";
@@ -127,10 +91,11 @@ $(document).ready(function(){
                             imgDiv.class = 'div';
                             imgDiv.style.backgroundColor = "rgb(226,108,100)";
                             
-                            /*imgDiv.onclick = function(){
+                            
+                            thename.onclick = function(){
                                 sessionStorage.image_id = this.id;
                                 window.location.replace("#/otheruserprofile");   
-                            }*/
+                            }
                                                         
                             imgDiv.onclick = function() {
                                         sessionStorage.image_id = this.id;
@@ -146,56 +111,6 @@ $(document).ready(function(){
                             var br = document.createElement("br"); 
                             var name = document.createElement("p");
                             
-                            
-                            
-                           /* $.ajax({
-                                         url:"controller/images.php",
-                                         dataType:"json",
-                                         type:"POST",
-                                         data:{
-                                                method:"userandimage",
-                                              },
-                                     
-                                          success:function(resp){
-                                                for(var i = 0; i<resp.length; i++){
-                                                    console.log(resp);
-                                                    name.innerHTML = resp[i].username;
-                                               
-                }
-                                                
-            }
-        }); 
-                            
-                            $.ajax({
-                                  url: "./controller/comment.php",
-                                  type: "post",
-                                  dataType: "json",
-                                  data: {
-                                  method: "getall",
-                                  image_id: sessionStorage.image_id
-                                  },
-                                success: function (resp) {
-                                    console.log(resp);
-                                    var html = "<ul id='list'>";
-                                    for (var i= 0; i < resp.length; i++) {
-                                      html += "<li id='listItem'>"+resp[i].username+": "+resp[i].title+"</li>";
-                                    }
-                                      html += "";
-                                      html += "</ul>";
-                                    $("#commentdisplay").html(html);
-
-                                      var list = document.getElementById("list");
-                                      var listItem = document.getElementById("listItem");
-
-                                      list.style.listStyleType = "none";
-
-                                  },
-                                error: function(jqXHR, textStatus, errorThrown) {
-                              console.log(textStatus, errorThrown);
-                            }
-                                });
-                            
-                            */
                             masterDiv.style.margin = "auto";
                             
                             div.appendChild(imgDiv);
@@ -213,12 +128,10 @@ $(document).ready(function(){
                             commentDiv.appendChild(commentTitle);
                             commentDiv.appendChild(comment);
                             
-                        
                             div.style.marginBottom = "10px";
                             usrDiv.style.backgroundColor = "#eee";
                             commentDiv.style.backgroundColor = "#eee";
                             masterDiv.style.width = "350px";
-                            
                                                       
                             comment.id = resp[i].id;
                             div.id = resp[i].id;
